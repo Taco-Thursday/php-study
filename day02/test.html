@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		let students = [
+			{
+				'name' : 'jack',
+				'Math' : 40,
+				'English' : 56,
+			},
+			{
+				'name' : 'lucy',
+				'Math' : 90,
+				'English' : 76,
+			},
+			{
+				'name' : 'anny',
+				'Math' : 89,
+				'English' : 100,
+			},
+		];
+
+		let mathScore = students[0].Math;
+		let maxScore = (students[0].Math + students[0].English) / 2;
+		
+		for (let i = students.length - 1; i >= 0; i--) {
+			if(students[i].Math > mathScore){
+				mathScore = students[i].Math;
+			}
+			let meanScore = (students[i].Math + students[i].English) / 2;
+			if(meanScore > maxScore) {
+				maxScore = meanScore;
+			}
+		
+		}
+			
+		let mathIndex = students.findIndex(item =>{
+			return item.Math === mathScore
+		})
+
+		let maxIndex = students.findIndex(item => {
+			return (item.Math + item.English) / 2 === maxScore
+		})
+		
+
+		console.log('平均分最高为：' + maxScore);
+		console.log('平均分最高的学生为：' + students[maxIndex].name);
+		console.log('数学最低分：' + mathScore);
+		console.log('数学最低的学生是：' + students[mathIndex].name);
+		
+	</script>
+</body>
+</html>
