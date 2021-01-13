@@ -59,6 +59,8 @@ function getMinEnglishStudent($students)
 	foreach ($students as $name => $value) {
 		if ($value['English'] < $englishScore) {
 			$englishScore = $value['English'];
+		}
+		if ($englishScore == $value['English']) {
 			$minEnglishName = $name;
 		}
 	}
