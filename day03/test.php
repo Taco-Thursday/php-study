@@ -43,7 +43,7 @@ for ($i = 1; $i < 10; $i++) {
 }
 echo '<br/>';
 #写一个方法，传入数字分数，如果分数大于 90 返回优秀， 60-90之间 合格 小于 60 不及格
-$score = 10;
+$score = 93;
 function getScoreOne($score)
 {
     if ($score > 90) :
@@ -113,3 +113,10 @@ function getScoreThree($score)
     }
 }
 echo getScoreThree($score);
+echo '<br/>';
+
+function getScoreFour($score)
+{
+    return $score > 90 ? '优秀' : ($score > 60 ? '合格' : '不合格');
+}
+echo getScoreFour($score);
