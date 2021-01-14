@@ -43,12 +43,12 @@ for ($i = 1; $i < 10; $i++) {
 }
 echo '<br/>';
 #写一个方法，传入数字分数，如果分数大于 90 返回优秀， 60-90之间 合格 小于 60 不及格
-$score = 93;
+$score = 61;
 function getScoreOne($score)
 {
     if ($score > 90) :
         return '优秀';
-    elseif (60 < $score == 90) :
+    elseif (60 < $score && $score <= 90) :
         return '合格';
     else :
         return '不合格';
@@ -58,57 +58,29 @@ echo getScoreOne($score);
 echo '<br/>';
 function getScoreTwo($score)
 {
-    $newScore = ceil($score / 10);
-    switch ($newScore) {
-        case 0:
+    switch ($score) {
+        case $score > 90:
+            echo "优秀";
+            break;
+        case $score > 60 && $score <= 90:
+            echo "合格";
+            break;
+        default:
             echo "不合格";
-            break;
-        case 1:
-            echo "不合格";
-            break;
-        case 2:
-            echo "不合格";
-            break;
-        case 3:
-            echo "不合格";
-            break;
-        case 4:
-            echo "不合格";
-            break;
-        case 5:
-            echo "不合格";
-            break;
-        case 6:
-            echo '不合格';
-            break;
-        case 6:
-            echo '合格';
-            break;
-        case 7:
-            echo '合格';
-            break;
-        case 8:
-            echo '合格';
-            break;
-        case 9:
-            echo '合格';
-            break;
-        case 10:
-            echo '优秀';
-            break;
     }
 }
 echo getScoreTwo($score);
 echo '<br/>';
+
 function getScoreThree($score)
 {
-    while ($score > 90) {
+    if ($score > 90) {
         return '优秀';
     }
-    while (60 < $score == 90) {
+    if (60 < $score && $score <= 90) {
         return '合格';
     }
-    while ($score <= 60) {
+    if ($score <= 60) {
         return '不合格';
     }
 }
